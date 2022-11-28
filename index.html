@@ -1,22 +1,23 @@
 <html>
 
 <body>
-<h1>Hello World!</h1>
-<p id="para">Some text here</p>
-<button onclick="changeColor('blue');">blue</button>
-<button onclick="changeColor('red');">red</button>
+  <h1>Hello World!</h1>
+  <p id="para">Some text here</p>
+  <button onclick="changeColor('blue');">blue</button>
+  <button onclick="changeColor('red');">red</button>
 </body>
 <script>
-console.log('hello world!')
-x=1
-s='prova'
-s[0]='P'
-s=s+' di programma'
-console.log('s=',s)
+  console.log('hello world!')
+  x = 1
+  s = 'prova'
+  s[0] = 'P'  //non funziona perché string is immutable
+  s = s + ' di programma'
+  console.log('s=', s)
 
-function changeColor(newColor) {
-  const elem = document.getElementById('para');
-  elem.style.color = newColor;
-}
+  function changeColor(newColor) {
+    const elem = document.getElementById('para');
+    elem.style.color = newColor;
+  }
 </script>
+
 </html>
