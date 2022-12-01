@@ -1,0 +1,41 @@
+<html>
+
+<body>
+    <!--
+    Questo è un commento html
+   -->
+
+    <h1>Corso Programmazione</ h1>
+
+</body>
+
+<script>
+    /*
+        Commento multilinea javascriot
+    */
+
+    console.log("Benvenuti!") // commento in linea
+
+    //stampa la somma di due numeri
+    var i = 10
+    var j = 4
+    console.log('sum=', i + j)
+
+    //funzione con secondo valore default=1
+    function somma(i, j = 1) {
+
+        console.log('i valori da sommare sono: ', i, 'e', j)
+        return i + j
+    }
+
+    //stampa la somma usando la funzione
+    console.log('sum=',somma(1, 2))
+
+    //la funzione con un solo argomento
+    console.log('sum=', somma(1.1))
+
+
+
+</script>
+
+</html>
