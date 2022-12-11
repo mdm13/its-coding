@@ -1,4 +1,4 @@
-# Elementi di Programmazione - ITS Belluno
+# Elementi di Programmazione - ITS Meccanotronico Belluno
 
 ## Javascript
 ### Esempi di programmi in html5: html+javascript+css
