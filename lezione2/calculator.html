@@ -1,0 +1,77 @@
+<html>
+
+<style>
+  
+</style>
+<body>
+  
+
+  <div>
+    A: <input type="number" id="numberA" >
+  </div>
+  <div>
+    B: <input type="number" id="numberB" >
+  </div>
+
+  <button onclick="somma()">Somma</button>
+  <button onclick="differenza()">Differenza</button>
+  <button onclick="prodotto()">Prodotto</button>
+  <button onclick="divisione()">Divisione</button>
+
+  <!-- Il risultato dell'operazione verrà stampato dentro questo tag -->
+  <div id="result"></div>
+  
+
+</body>
+<script>
+  
+  function somma() {
+    var a=+document.getElementById("numberA").value;
+    var b=+document.getElementById("numberB").value;
+
+    console.log('la somma di a e b =',a+b)
+
+    var response=`a + b = ${a+b}` 
+    document.getElementById("result").innerHTML = response;
+
+    
+  }
+
+  function differenza() {
+    var a=+document.getElementById("numberA").value;
+    var b=+document.getElementById("numberB").value;
+
+    var response=`a - b = ${a-b}` 
+    document.getElementById("result").innerHTML = response;
+
+    
+  }
+
+  function prodotto() {
+    var a=+document.getElementById("numberA").value;
+    var b=+document.getElementById("numberB").value;
+
+    var response=`a * b = ${a*b}` 
+    document.getElementById("result").innerHTML = response;
+
+    
+  }
+
+  function divisione() {
+    var a=+document.getElementById("numberA").value;
+    var b=+document.getElementById("numberB").value;
+
+    var response=`a / b = ${a/b}` 
+    document.getElementById("result").innerHTML = response;
+
+    
+  }
+
+  
+
+
+
+
+</script>
+
+</html>
