@@ -1,0 +1,46 @@
+<html>
+
+<style>
+  
+</style>
+<body>
+  
+
+  <div>
+    Scrivi un numero: <input type="number" id="numberA" >
+  </div>
+
+  <button onclick="analizza()">Analizza</button>
+
+  <!-- Il risultato dell'operazione verrà stampato dentro questo tag -->
+  <div id="result"></div>
+  
+
+</body>
+<script>
+  
+  function analizza() {
+    var a=+document.getElementById("numberA").value;
+
+    var response='Boh?'
+
+    if(a==10) {
+      response='il numero è uguale a 10'
+    } else if(a>10) {
+      response='il numero è maggiore di 10'
+    } else if(a<10){
+      response='il numero è minore di 10'
+    } else {
+
+    }
+    document.getElementById("result").innerHTML = response;
+
+    
+  }
+
+
+
+
+</script>
+
+</html>
