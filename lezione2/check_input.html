@@ -15,14 +15,18 @@
   <!-- Il risultato dell'operazione verrà stampato dentro questo tag -->
   <div id="result"></div>
   
+  <div id="max"></div>
 
 </body>
 <script>
   
+
+  var list=[]
+
   function analizza() {
     var a=+document.getElementById("numberA").value;
 
-    var response='Boh?'
+    var response=''
 
     if(a==10) {
       response='il numero è uguale a 10'
@@ -30,14 +34,29 @@
       response='il numero è maggiore di 10'
     } else if(a<10){
       response='il numero è minore di 10'
-    } else {
+    } 
 
-    }
+
+    list.push(a)
+    
     document.getElementById("result").innerHTML = response;
 
-    
+    document.getElementById("max").innerHTML = 'il massimo è '+findMax(list);
   }
 
+
+  function findMax(lista) {
+
+    if(lista.length==0) return undefined
+
+    var max=-10000
+
+    for(i=0;i<lista.length;i++) {
+      if(lista[i]>max) max=lista[i]
+    }
+
+    return max
+  }
 
 
 
