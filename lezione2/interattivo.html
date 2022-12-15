@@ -1,0 +1,50 @@
+<html>
+
+<body>
+
+<h1>Lezione 2: Interattivo</h1>
+
+<div>
+ Scrivi un numero: <input type="number" id="numberA" >
+</div>
+
+<button onclick="analizza()">Analizza il numero</button>
+
+<!-- Il risultato dell'operazione verrà stampato dentro questo tag -->
+<div id="result"></div>
+</body>
+
+<script>
+var lista_numeri=[]
+
+function analizza() {
+
+var a=+document.getElementById("numberA").value;
+
+lista_numeri.push(a)
+
+var nelementi=lista_numeri.length
+console.log('la lista contiene ',nelementi,'numeri')
+
+var messaggio=''
+
+
+
+if(a==10) {
+	messaggio='numero uguale a 10'
+} else if(a<10) {
+	messaggio='numero minore di 10'
+}else if(a>10) {
+	messaggio='numero maggiore di 10'
+}
+
+
+
+document.getElementById("result").innerHTML = messaggio
+
+}
+
+
+</script>
+
+</html>
