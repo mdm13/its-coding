@@ -1,6 +1,6 @@
 <html>
 
-<script src="dict2.js"></script>
+<script src="dict1.js"></script>
 
 <body>
 
@@ -45,7 +45,7 @@
         var key = document.getElementById("chiave").value;
         var value = document.getElementById("valore").value;
 
-        passAdd(key, value)
+        lib.passAdd(key, value)
 
         document.getElementById("chiave").value = ''
         document.getElementById("valore").value = ''
@@ -55,7 +55,7 @@
     function searchPassOne() {
         var key = document.getElementById("nome").value;
 
-        var pass = passSearchOne(key)
+        var pass = lib.passSearchOne(key)
 
 
         var messaggio='password = '+pass
@@ -71,7 +71,7 @@
 
         var key = document.getElementById("nomeParziale").value;
 
-        var pass = passSearchAll(key)
+        var pass = lib.passSearchAll(key)
 
         //console.log(pass)
 

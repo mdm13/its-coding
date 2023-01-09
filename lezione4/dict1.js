@@ -1,37 +1,43 @@
 
+let lib = (function () {
 
-pass = {}
+    pass = {}
 
-function passAdd(key, value) {
+    function passAdd(key, value) {
 
-    if (!key) return
+        if (!key) return
 
-    pass[key] = value
-
-
-    console.log('pass = ', pass)
+        pass[key] = value
 
 
-}
+        console.log('pass = ', pass)
 
-function passSearchOne(key) {
 
-    return pass[key]
-}
+    }
 
-function passSearchAll(key) {
+    function passSearchOne(key) {
 
-    var result = []
+        return pass[key]
+    }
 
-    var result = []
+    function passSearchAll(key) {
 
-    for (const [k, value] of Object.entries(pass)) {
-       
-        if (k.startsWith(key)) {
-            result.push({ key: k, value })
+        var result = []
+
+        var result = []
+
+        for (const [k, value] of Object.entries(pass)) {
+
+            if (k.startsWith(key)) {
+                result.push({ key: k, value })
+            }
         }
+
+
+        return result
     }
 
 
-    return result
-}
+    return { passAdd, passSearchOne, passSearchAll };
+
+})();
