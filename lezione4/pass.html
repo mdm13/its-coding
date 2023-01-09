@@ -1,0 +1,103 @@
+<html>
+
+<script src="dict2.js"></script>
+
+<body>
+
+    <h3>Lezione 4: gestore di password</h3>
+
+
+    <div>
+        utente: <input type="text" id="chiave">
+        password: <input type="text" id="valore">
+        <button onclick="add()">Aggiungi</button>
+    </div>
+
+
+    <p>Ricerca la password dal nome utente:</p>
+
+    <div>
+        nome: <input type="text" id="nome">
+        <button onclick="searchPassOne()">Cerca</button>
+    </div>
+
+    <div id="risultato">
+    </div>
+
+
+    <p>Ricerca la password dal nome utente:</p>
+
+    <div>
+        nome: <input type="text" id="nomeParziale">
+        <button onclick="searchPassAll()">Cerca</button>
+    </div>
+
+    <div id="risultatoAll">
+    </div>
+
+
+</body>
+
+<script>
+
+    function add() {
+
+        var key = document.getElementById("chiave").value;
+        var value = document.getElementById("valore").value;
+
+        passAdd(key, value)
+
+        document.getElementById("chiave").value = ''
+        document.getElementById("valore").value = ''
+
+    }
+
+    function searchPassOne() {
+        var key = document.getElementById("nome").value;
+
+        var pass = passSearchOne(key)
+
+
+        var messaggio='password = '+pass
+        if(pass==undefined)  {
+            messaggio='Password non trovata per utente: '+key
+        }
+
+        document.getElementById("risultato").innerHTML = messaggio
+
+    }
+
+    function searchPassAll() {
+
+        var key = document.getElementById("nomeParziale").value;
+
+        var pass = passSearchAll(key)
+
+        //console.log(pass)
+
+        //scrivi il risultato raw
+        //document.getElementById("risultatoAll").innerHTML = JSON.stringify(pass)  
+
+        if(pass) {
+            //stampa il risultato raw sulla console
+            for(var i=0;i<pass.length;i++) {
+                var v=pass[i]
+                console.log(v.key,v.value)
+            }
+
+            var messaggio=''
+            for(var i=0;i<pass.length;i++) {
+                var v=pass[i]
+                messaggio+='<div><span>'+v.key+': '+v.value+'<span> </div>'
+            }
+            document.getElementById("risultatoAll").innerHTML = messaggio
+        }
+
+    }
+
+
+
+</script>
+
+
+</html>
