@@ -1,0 +1,155 @@
+<html>
+
+<style>
+    .board {
+        width: 1200px;
+        height: 500px;
+        border: 2px solid darkgreen;
+        top: 10px;
+        left: 10px;
+    }
+
+    .console {
+        margin-top: 5px;
+        width: 1200px;
+        height: 100px;
+        border: 2px solid darkgreen;
+        top: 10px;
+        left: 10px;
+    }
+
+    .ball {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        border-radius: 50px;
+        top: 10px;
+        left: 200px;
+    }
+
+    .bar {
+        position: relative;
+        width: 120px;
+        height: 10px;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        top: 400px;
+        left: 0;
+    }
+
+    .btn {
+
+        width: 40px;
+        height: 30px;
+        top: 230px;
+        left: 100px;
+    }
+</style>
+
+<body>
+    <div class="board">
+
+        <div class="ball" id="ball">
+
+        </div>
+
+        <div class="bar" id="bar">
+
+        </div>
+
+
+    </div>
+
+    <div class="console">
+        <div>
+            <button class="btn" onclick="moveLeft()">&lt;</button>
+
+            <button class="btn" style="left:160px" onclick="moveRight()">&gt;</button>
+        </div>
+    </div>
+
+
+</body>
+
+
+<script>
+
+    function moveElement(el, dx) {
+        el.style.left = 'calc(' + getComputedStyle(el).left + ' + ' + dx + 'px)';
+    }
+
+    document.onkeydown = checkKey;
+
+    function checkKey(e) {
+
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+        }
+        else if (e.keyCode == '37') {
+            moveLeft()
+        }
+        else if (e.keyCode == '39') {
+            moveRight()
+        }
+
+    }
+
+    var speed = { vx: 5, vy: 10 }
+
+    function moveBall() {
+
+        var el = document.getElementById("ball");
+
+
+        var x = parseInt(getComputedStyle(el).left)
+        var y = parseInt(getComputedStyle(el).top)
+        console.log('position is', x, y)
+
+        if (x > 1150 || x <= 0) {
+            speed.vx = -speed.vx
+        }
+
+        if (y > 400 || y <= 0) {
+            speed.vy = -speed.vy
+        }
+
+        var dx = speed.vx
+        var dy = speed.vy
+
+            //el.style.top = 'calc(' + getComputedStyle(el).top + ' + ' + dy + 'px)';
+            //el.style.left = 'calc(' + getComputedStyle(el).left + ' + ' + dx + 'px)';
+
+        el.style.top = y + dy + 'px';
+        el.style.left = x + dx + 'px';
+
+    }
+
+    setInterval(moveBall, 100);
+
+
+
+
+    function moveRight() {
+
+        var el = document.getElementById("bar");
+        moveElement(el, 10)
+
+    }
+
+    function moveLeft() {
+
+        var el = document.getElementById("bar");
+        moveElement(el, -10)
+
+    }
+
+</script>
+
+</html>

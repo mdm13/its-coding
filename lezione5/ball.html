@@ -1,0 +1,73 @@
+<html>
+
+<style>
+    .board {
+        width: 1200px;
+        height: 500px;
+        border: 2px solid darkgreen;
+        top: 10px;
+        left: 10px;
+    }
+
+    .ball {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        border-radius: 50px;
+        top: 10px;
+        left: 200px;
+    }
+
+</style>
+
+<body>
+    <div class="board">
+
+        <div class="ball" id="ball">
+
+        </div>
+
+    </div>
+
+
+</body>
+
+
+<script>
+
+
+   
+    var speed = { vx: 5, vy: 10 }
+
+    function moveBall() {
+
+        var el = document.getElementById("ball");
+
+        var x = parseInt(getComputedStyle(el).left)
+        var y = parseInt(getComputedStyle(el).top)
+
+        if (x > 1150 || x <= 0) {
+            speed.vx = -speed.vx
+        }
+
+        if (y > 440 || y <= 0) {
+            speed.vy = -speed.vy
+        }
+
+        var dx = speed.vx
+        var dy = speed.vy
+
+        el.style.top = y + dy + 'px';
+        el.style.left = x + dx + 'px';
+
+    }
+
+    setInterval(moveBall, 100);
+
+
+
+</script>
+
+</html>
