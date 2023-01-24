@@ -1,0 +1,70 @@
+<html>
+
+<style>
+    .board {
+        width: 1200px;
+        height: 500px;
+        border: 2px solid darkgreen;
+        background-color: lightgray;
+        top: 10px;
+        left: 10px;
+    }
+
+    .ball {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        border-radius: 5px;
+    }
+
+    .console {
+        margin-top: 5px;
+        width: 1200px;
+        height: 100px;
+        border: 2px solid darkgreen;
+        top: 10px;
+        left: 10px;
+    }
+</style>
+
+
+
+<body>
+
+    <div class="board">
+
+        <div class="ball" id="ball">
+
+        </div>
+
+    </div>
+
+    <div class="console">
+        <button class="btn" onclick="aggiorna()">Aggiorna</button>
+    </div>
+
+
+</body>
+
+
+<script>
+
+    function aggiorna() {
+
+        var el = document.getElementById("ball");
+
+        el.style.left = 10 + 'px';
+        el.style.top = 10 + 'px';
+    }
+
+
+
+
+
+</script>
+
+
+
+</html>

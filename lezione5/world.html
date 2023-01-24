@@ -1,0 +1,105 @@
+<html>
+
+<style>
+    .board {
+        width: 1200px;
+        height: 500px;
+        border: 2px solid darkgreen;
+        background-color: lightgray;
+        top: 10px;
+        left: 10px;
+    }
+
+   /*  .ball {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        background-color: lightgreen;
+        border: 2px solid darkgreen;
+        border-radius: 5px;
+    } */
+
+    .ball {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        
+    }
+</style>
+
+
+<script src="fisica.js"></script>
+
+<body>
+
+    <div class="board">
+
+        <div class="ball" id="ball">
+            <img src="sm.png" alt="su" width="50" height="50"/>
+        </div>
+
+    </div>
+
+</body>
+
+
+<script>
+
+    
+    var pos = { x: 40, y: 20 }
+    var vel = { x: 40, y: 0 }
+    var acc = { x: 0, y: 5 }
+
+
+
+    lib.init(ostacoli)
+
+
+    //x=0 bordo sinistro
+    //x=1150 bordo destro
+    //y=0 bordo in alto
+    //y=44 bordo in basso
+
+    function ostacoli() {
+
+        if (pos.x > 1150) {
+            pos.x = 1150
+            vel.x = -vel.x
+        }
+
+        if (pos.x < 0) {
+            pos.x = 0
+            vel.x = -vel.x *0.5
+        }
+
+        if (pos.y > 440) {
+            pos.y = 440
+            vel.y = -vel.y *0.8
+        }
+
+        if (pos.y < 0) {
+            pos.y = 0
+            vel.y = -vel.y
+        }
+    }
+
+
+/*
+    onkeyup = function (e) {
+        if (e.key == " " ||
+            e.code == "Space" ||
+            e.keyCode == 32
+        ) {
+            lib.moveBall()
+        }
+    }
+*/
+    
+
+
+
+</script>
+
+
+
+</html>

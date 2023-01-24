@@ -5,6 +5,7 @@
         width: 1200px;
         height: 500px;
         border: 2px solid darkgreen;
+        background-color: lightgray;
         top: 10px;
         left: 10px;
     }
@@ -15,14 +16,14 @@
         height: 50px;
         background-color: lightgreen;
         border: 2px solid darkgreen;
-        border-radius: 50px;
-        top: 10px;
-        left: 200px;
+        border-radius: 5px;
     }
-
 </style>
 
+
+
 <body>
+
     <div class="board">
 
         <div class="ball" id="ball">
@@ -31,43 +32,37 @@
 
     </div>
 
-
 </body>
 
 
 <script>
 
-
-   
-    var speed = { vx: 5, vy: 10 }
-
-    function moveBall() {
+    function sposta() {
 
         var el = document.getElementById("ball");
 
         var x = parseInt(getComputedStyle(el).left)
         var y = parseInt(getComputedStyle(el).top)
 
-        if (x > 1150 || x <= 0) {
-            speed.vx = -speed.vx
-        }
-
-        if (y > 440 || y <= 0) {
-            speed.vy = -speed.vy
-        }
-
-        var dx = speed.vx
-        var dy = speed.vy
-
-        el.style.top = y + dy + 'px';
-        el.style.left = x + dx + 'px';
-
+        el.style.left = x + 10 + 'px';
+        el.style.top = y + 10 + 'px';
     }
 
-    setInterval(moveBall, 100);
+    onkeyup = function (e) {
+        if (e.key == " " ||
+            e.code == "Space" ||
+            e.keyCode == 32
+        ) {
+            sposta()
+        }
+    }
+
+
 
 
 
 </script>
+
+
 
 </html>
