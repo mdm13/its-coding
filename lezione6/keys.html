@@ -1,0 +1,33 @@
+<html>
+
+
+<body style="text-align:center;">
+    <h1> JavaScript Detecting arrow key presses.</h1>
+    <p>click on the output page and then press the arrow key to get event triggered</p>
+
+</body>
+
+<script>
+
+
+    document.onkeydown = function (event) {
+        switch (event.keyCode) {
+            case 37:
+                console.log('Left key');
+                break;
+            case 38:
+                console.log('Up key');
+                break;
+            case 39:
+                console.log('Right key');
+                break;
+            case 40:
+                console.log('Down key');
+                break;
+        }
+    };
+
+</script>
+
+
+</html>
