@@ -1,0 +1,61 @@
+<html>
+
+<style>
+
+.palla {
+position:absolute;
+background-color:lightgreen;
+width:200px;
+height:200px;
+left:10px;
+top:100px;
+border-style: solid;
+border-radius:100px;
+border-width:10px;
+}
+
+</style>
+
+<body>
+<!--
+<div>
+<button onclick="aggiorna()">Aggiorna</button>
+</div>
+-->
+<div class="palla" id="ball">
+</div>
+
+
+
+</body>
+
+<script>
+
+function aggiorna() {
+
+var el=document.getElementById("ball")
+
+var x=parseInt(getComputedStyle(el).left)
+var y=parseInt(getComputedStyle(el).top)
+
+
+
+el.style.left=x+10+'px'
+el.style.top=y+10+'px'
+
+}
+
+onkeyup=function(e) {
+	if(e.key==" " || e.code=="Space" || e.keyCode==32) {
+		aggiorna()
+	}
+	
+}
+
+
+
+</script>
+
+
+
+</html>
