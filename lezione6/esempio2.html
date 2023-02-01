@@ -1,0 +1,102 @@
+<html>
+
+<style>
+
+.palla {
+position:absolute;
+//background-color:lightgreen;
+width:100px;
+height:100px;
+left:10px;
+top:100px;
+border-style: solid;
+border-radius:50px;
+border-width:10px;
+}
+
+.board {
+	width:1200px;
+	height:500px;
+	border-style: solid;
+	border-width:10px;
+	top:10px;
+	left:10px;
+	background-color:lightgray;
+
+}
+
+</style>
+<body>
+<div>
+<button onclick="inizio()">Reset</button>
+</div>
+
+<div class="palla" id="ball">
+  <img src="sm.png" alt="su" width="100" height="100"/>
+</div>
+
+
+<div class="board">
+</div>
+
+
+
+</body>
+
+<script>
+
+var vel= {x:10,y:0}
+var acc = {x:0,y:0.1}
+
+function inizio() {
+var el=document.getElementById("ball")
+el.style.left=10+'px'
+el.style.top=10+'px'
+
+}
+
+function aggiorna() {
+
+var el=document.getElementById("ball")
+
+var x=parseInt(getComputedStyle(el).left)
+var y=parseInt(getComputedStyle(el).top)
+
+vel.y=vel.y+acc.y
+
+if(x>=1100) {
+	x=1100
+	vel.x=-vel.x*0.9
+} 
+
+if(x<0) {
+	x=0
+	vel.x=-vel.x*0.9
+} 
+
+if(y>=400) {
+	y=400
+	vel.y=-vel.y*0.9
+} 
+
+el.style.left=x+vel.x+'px'
+el.style.top=y+vel.y+'px'
+
+}
+
+setInterval(aggiorna,50)
+
+document.onkeyup=function(e) {
+	if(e.key==" " || e.code=="Space" || e.keyCode==32) {
+		aggiorna()
+	}
+	
+}
+
+
+
+</script>
+
+
+
+</html>
