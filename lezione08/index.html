@@ -1,0 +1,44 @@
+<html>
+
+
+<body>
+   
+
+</body>
+
+<script>
+
+function fn1(x,v) {
+	for(var i=0;i<v.length;i++) {
+		if(x>v[i]) x=v[i]
+	}
+	return x
+}
+console.log(fn1(1000,[5,8,2,4]) )
+
+
+function fn2(vec) { return vec[1] }
+console.log(fn2([1,5]))
+
+function fn3(a,b) {
+  if(a>=b) return true
+  return false
+}
+console.log(fn3(2,2))
+
+var animal = {a:3, s:'cat', g:'m'}
+console.log(animal.s)
+
+function fn4(a,b) { return a+b }
+console.log(fn4('franco','paolo'))
+
+
+var x=0
+for(var i=0;i<5;i++) { x+=2 }
+
+console.log(x)
+
+</script>
+
+
+</html>
