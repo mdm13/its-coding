@@ -72,6 +72,19 @@ void f(int i) {
     
 }
 
+void fl(int i) {
+    short b=1;
+    for(int k=7;k>=0;k--) {
+        int mask=b<<k;
+        if(i&mask) {
+            printf("1");
+        } else {
+            printf("0");
+        }
+    }
+    printf("\n");
+}
+
 int main()
 {
     
