@@ -1,11 +1,12 @@
 /******************************************************************************
 
-variabili locali e globali
+variabili locali e globali (ambito/scope)
+durata automatica e fissa
 
 *******************************************************************************/
 #include <stdio.h>
 
-int i=10;  //variabile globale: definita fuori di qualsiasi funzione
+int i=10;  //variabile globale (ambito): definita fuori di qualsiasi funzione
 
 
 void fun1() {
@@ -13,12 +14,12 @@ void fun1() {
 }
 
 void fun2() {
-    int i=0;  //variabile locale con durata automatica: definita all'interno di una funzione
+    int i=0;  //variabile locale (ambito) con durata automatica: definita all'interno di una funzione
     i++;
 }
 
 void fun3() {
-    static int i=1;   //variabile locale con durata fissa (statica): inizializzata all'avvio del programma e non all'inizio della funzione
+    static int i=1;   //variabile locale (ambito) con durata fissa (statica): inizializzata all'avvio del programma e non all'inizio della funzione
     printf("static int = %d\n",i);
     
     i++;
