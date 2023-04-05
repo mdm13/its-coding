@@ -17,15 +17,25 @@ void fun2() {
     i++;
 }
 
+void fun3() {
+    static int i=1;
+    printf("static int = %d\n",i);
+    
+    i++;
+}
+
 int main()
 {
-    printf("%d\n",i);
+    printf("global i = %d\n",i);
 
     fun1();
-    printf("%d\n",i);
+    printf("global i = %d\n",i);
     
     fun2();
-    printf("%d\n",i);
+    printf("global i = %d\n",i);
+    
+    fun3();
+    fun3();
     
     return 0;
 }
